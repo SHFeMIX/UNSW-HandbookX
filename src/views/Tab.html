@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <template id="my_temp">
+        <div class="tabBar">
+            <div @click="right"><</div>
+            <div>
+                <div class="list" :style="{ transform: `translateX(${firstShowIndex * -100}px)`}">
+                    <div v-for="(item, index) in list" key="item"
+                        :style="{ backgroundColor: currIndex === index ? 'grey': '' }"
+                        @click="currIndex = index"
+                    >{{ item }}</div>
+                </div>
+            </div>
+            <div @click="left">></div>
+        </div>
+        <img class="" data-original="https://pic3.se8manhua.club/imgBridge2019.php?url=https://img.ozv.me/d/file/bigpic/1338362u30e30cptjz.jpg" src="https://pic3.se8manhua.club/imgBridge2019.php?url=https://img.ozv.me/d/file/bigpic/1338362u30e30cptjz.jpg">
+    </template>
+</body>
+
+<script>
+    Vue.createApp({
+        template: '#my_temp',
+
+        setup() {
+            const list = Vue.reactive([1, 2, 3, 4, 5, 6, 7, 8, 9])
+            const currIndex = Vue.ref(0)
+            const firstShowIndex = Vue.ref(0)
+            const windowSize = 5
+
+            function left() {
+                if (firstShowIndex.value === currIndex.value) {
+                    return
+                }
+
+                if (firstShowIndex.value + windowSize === list.length) {
+                    return
+                }
+
+                firstShowIndex.value++
+            }
+
+            function right() {
+                if (firstShowIndex.value + windowSize - 1 === currIndex.value) {
+                    return
+                }
+
+                if (firstShowIndex.value === 0) {
+                    return
+                }
+
+                firstShowIndex.value--
+            }
+
+            return {
+                list, currIndex, firstShowIndex, windowSize,
+                left, right
+            }
+        },
+
+    }).mount('#app');
+</script>
+
+<style>
+    .tabBar {
+        width: 600px;
+        height: 50px;
+        margin: 30px auto;
+        border: solid;
+        display: flex;
+        justify-content: space-between;
+
+        >*:nth-child(2n + 1) {
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            background-color: yellow;
+            user-select: none;
+        }
+
+        >*:nth-child(2) {
+            width: 500px;
+            overflow: hidden;
+        }
+    }
+
+    .list {
+        display: flex;
+        width: 900px;
+        justify-content: space-around;
+        transition: transform 0.5s ease-in-out;
+
+        >* {
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            height: 50px;
+
+            &:hover {
+                background-color: grey
+            }
+        }
+    }
+</style>
+
+</html>
