@@ -2,7 +2,7 @@ import { customRef } from 'vue'
 
 export default function<T>(value:T, delay = 200) {
     let timeout:number
-    return customRef<T>((track, trigger) => {
+    return customRef((track, trigger) => {
         return {
             get() {
                 track()

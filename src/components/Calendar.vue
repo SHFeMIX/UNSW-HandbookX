@@ -10,7 +10,7 @@
 
         <div>
             <div v-for="index in ['日', '一', '二', '三', '四', '五', '六']" :key="index">{{ index }}</div>
-            <div v-for="(day, index) in calendar" :key="day"
+            <div v-for="(day, index) in calendar" :key="index"
                 :style="{ background: isToday(day) ? '#FFCC0073' : '' }">{{ day }}</div>
         </div>
     </div>

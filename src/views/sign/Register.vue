@@ -105,7 +105,7 @@ button {
     background-color: #FFCC00;
     margin-top: 20px;
 
-    
+
     font-family: Inter;
     font-size: 16px;
     font-weight: 500;

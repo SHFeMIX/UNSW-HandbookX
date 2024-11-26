@@ -49,7 +49,7 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import Header from '@/components/Header.vue'
 import Calendar from '@/components/Calendar.vue'
-import useDebouncedRef from '@/hooks/useDebouncedRef.ts';
+import useDebouncedRef from '@/hooks/useDebouncedRef';
 
 const searchText = useDebouncedRef('', 1000)
 
