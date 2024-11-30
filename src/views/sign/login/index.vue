@@ -12,7 +12,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useRouter } from 'vue-router'
 import usernameImg from '@/assets/userName.png'
 import passwordImg from '@/assets/password.png'

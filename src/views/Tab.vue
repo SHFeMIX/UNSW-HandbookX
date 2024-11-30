@@ -16,7 +16,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, reactive } from 'vue'
 const list = reactive([1, 2, 3, 4, 5, 6, 7, 8, 9])
 const currIndex = ref(0)
@@ -56,7 +56,7 @@ function right() {
     display: flex;
     justify-content: space-between;
 
-    > *:nth-child(2n + 1) { 
+    > *:nth-child(2n + 1) {
         width: 50px;
         display: flex;
         justify-content: center;
@@ -85,7 +85,7 @@ function right() {
         font-size: 30px;
         height: 50px;
         transition: transform;
-        
+
         &:hover {
             background-color: grey
         }

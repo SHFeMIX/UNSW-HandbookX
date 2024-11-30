@@ -6,17 +6,17 @@ const router = createRouter({
     {
       path: '/sign',
       name: 'sign',
-      component: () => import('@/views/SignBg.vue'),
+      component: () => import('@/views/sign/index.vue'),
       children: [
         {
           path: 'login',
           name: 'login',
-          component: () => import('@/views/sign/Login.vue'),
+          component: () => import('@/views/sign/login/index.vue'),
         },
         {
           path: 'register',
           name: 'register',
-          component: () => import('@/views/sign/Register.vue'),
+          component: () => import('@/views/sign/register/index.vue'),
         },
         {
           path: '',
@@ -31,12 +31,12 @@ const router = createRouter({
     {
       path: '/home',
       name: 'home',
-      component: () => import('@/views/Home.vue'),
+      component: () => import('@/views/home/index.vue'),
     },
     {
       path: '/detail/:code',
       name: 'detail',
-      component: () => import('@/views/Detail.vue'),
+      component: () => import('@/views/detail/index.vue'),
     },
     {
       path: '/tab',
