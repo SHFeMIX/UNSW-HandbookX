@@ -13,8 +13,8 @@
 </template>
 
 <script setup lang="ts">
-import signBg from '@/assets/SignBg.png'
-import logo from '@/assets/Logo.png'
+import signBg from '#/assets/SignBg.png'
+import logo from '#/assets/Logo.png'
 
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'

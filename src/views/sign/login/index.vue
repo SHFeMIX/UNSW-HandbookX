@@ -1,6 +1,6 @@
 <template>
-    <input placeholder="用户名/电子邮箱" :style="{ backgroundImage: `url(${usernameImg})`, borderColor: nameValid ? '' : 'red' }"
-        v-model="username" />
+    <input placeholder="用户名/电子邮箱"
+        :style="{ backgroundImage: `url(${usernameImg})`, borderColor: nameValid ? '' : 'red' }" v-model="username" />
     <input placeholder="密码" :style="{ backgroundImage: `url(${passwordImg})`, borderColor: passwordValid ? '' : 'red' }"
         v-model="password" type="password" />
     <button @click="submit">登录</button>
@@ -14,9 +14,9 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import usernameImg from '@/assets/userName.png'
-import passwordImg from '@/assets/password.png'
-import useInputValidator from '@/hooks/useInputValidator.ts'
+import usernameImg from '#/assets/userName.png'
+import passwordImg from '#/assets/password.png'
+import useInputValidator from '#/hooks/useInputValidator'
 
 const router = useRouter()
 

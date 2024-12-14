@@ -8,6 +8,6 @@
 </template>
 
 <script setup>
-import user from '@/assets/user.png'
-import P from '@/assets/P.png'
+import user from '../assets/user.png'
+import P from '../assets/P.png'
 </script>
