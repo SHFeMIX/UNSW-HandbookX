@@ -7,7 +7,7 @@
 
     <div class="footer">
         <div></div>
-        <div>新用户？ <span @click="() => $router.push('/sign/register')">注册</span></div>
+        <div>新用户？ <span @click="() => $router.push({ name: 'register' })">注册</span></div>
         <div></div>
     </div>
 </template>
@@ -37,7 +37,7 @@ function submit() {
 
     if (nameValid.value && passwordValid.value) {
         console.log(username.value, password.value)
-        router.push('/home')
+        router.push({ name: 'home' })
     }
 }
 

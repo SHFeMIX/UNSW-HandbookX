@@ -16,7 +16,7 @@
       <div class="recommendation" v-show="isRecommendating">
         <div class="spliter"></div>
         <div class="recoItem" v-for="i in recommendation" :key="i"
-          @mousedown="$event.button === 0 && $router.push(`/detail/${i.code}/`)">
+          @mousedown="$event.button === 0 && $router.push({ name: 'detail', params: { code: i.code } })">
           <!-- 用mousedown是为了比输入框的blur先执行 -->
           <div>{{ i.code }}</div>
           <div>{{ i.name }}</div>
@@ -65,7 +65,6 @@ const isRecommendating = computed(() => searchText.value && focus.value)
 const recommendation = ref([])
 watch(searchText, async () => {
   if (isRecommendating.value) {
-    // const data = await fetch('http://localhost:4523/m2/3791963-0-default/218194114')
     const data = await fetch('/api/searchRecommendation')
 
     recommendation.value = await data.json()

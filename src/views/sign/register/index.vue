@@ -12,7 +12,7 @@
 
     <div class="footer">
         <div></div>
-        <div>已有账号 <span @click="() => $router.push('/sign/login')">登录</span></div>
+        <div>已有账号 <span @click="() => $router.push({ name: 'login' })">登录</span></div>
         <div></div>
     </div>
 
@@ -61,7 +61,7 @@ function submit() {
 
     if (confirmValid.value) {
         console.log(username.value, email.value, password.value)
-        router.push('/home')
+        router.push({ name: 'home'})
     }
 
 }
