@@ -107,7 +107,7 @@ function isToday(day) {
     width: 226.66px;
     height: 0px;
     margin: 3px auto 9px;
-    border: 0.79px solid #C5C5C5
+    border-bottom: 0.79px solid #C5C5C5
 }
 
 .calendar> :last-child {

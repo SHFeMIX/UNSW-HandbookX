@@ -73,7 +73,7 @@ watch(searchText, async () => {
 
 const searchHistory = ref([])
 onMounted(async () => {
-  const data = await fetch('api/searchHistory')
+  const data = await fetch('/api/searchHistory')
   const temp = await data.json()
   searchHistory.value = temp.slice(0, 5)
 })
