@@ -14,9 +14,9 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import usernameImg from '#/assets/userName.png'
-import passwordImg from '#/assets/password.png'
-import useInputValidator from '#/hooks/useInputValidator'
+import usernameImg from '@/common/assets/userName.png'
+import passwordImg from '@/common/assets/password.png'
+import useInputValidator from '@/common/hooks/useInputValidator'
 
 const router = useRouter()
 

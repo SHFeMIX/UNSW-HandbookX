@@ -50,11 +50,11 @@
 
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from 'vue'
-import Header from '#/components/Header.vue'
-import Calendar from '#/components/Calendar.vue'
-import useDebouncedRef from '#/hooks/useDebouncedRef';
+import Header from '@/common/components/Header.vue'
+import Calendar from '@/common/components/Calendar.vue'
+import useDebouncedRef from '@/common/hooks/useDebouncedRef';
 
-import fly from '#/assets/fly.png'
+import fly from '@/common/assets/fly.png'
 
 const searchText = useDebouncedRef('', 1000)
 

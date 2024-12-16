@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import '#/assets/tailwind.css'
+import '@/common/assets/tailwind.css'
 
 
 import App from './App.vue'
