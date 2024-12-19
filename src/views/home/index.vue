@@ -54,6 +54,9 @@ import Header from '@/common/components/Header.vue'
 import Calendar from '@/common/components/Calendar.vue'
 import useDebouncedRef from '@/common/hooks/useDebouncedRef';
 
+import getSearchHistory from '@/common/services/searchHistory'
+import getSearchRecommendation from '@/common/services/searchRecommendation'
+
 import fly from '@/common/assets/fly.png'
 
 const searchText = useDebouncedRef('', 1000)
@@ -65,16 +68,15 @@ const isRecommendating = computed(() => searchText.value && focus.value)
 const recommendation = ref([])
 watch(searchText, async () => {
   if (isRecommendating.value) {
-    const data = await fetch('/api/searchRecommendation')
-
-    recommendation.value = await data.json()
+    const res = await getSearchRecommendation()
+    recommendation.value = res.data
   }
 })
 
 const searchHistory = ref([])
 onMounted(async () => {
-  const data = await fetch('/api/searchHistory')
-  const temp = await data.json()
+  const res = await getSearchHistory()
+  const temp = res.data
   searchHistory.value = temp.slice(0, 5)
 })
 

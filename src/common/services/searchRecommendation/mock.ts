@@ -1,8 +1,11 @@
 import { MockMethod } from 'vite-plugin-mock'
+import { baseUrl, ServiceMap } from '../index'
+
+const api = ServiceMap.getSearchHistory
 
 export default {
-  url: '/api/searchRecommendation',
-  // method: 'get',
+  url: baseUrl + api.url,
+  method: api.method,
   response: ({ query }) => {
     return [
       {
