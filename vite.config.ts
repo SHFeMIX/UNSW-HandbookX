@@ -13,7 +13,7 @@ export default defineConfig({
     vueJsx(),
     vueDevTools(),
     viteMockServe({
-      mockPath: 'common/services/mock',
+      mockPath: 'src/common/services/mock',
       enable: true
     }),
   ],
