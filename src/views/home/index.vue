@@ -26,35 +26,19 @@
     </div>
 
     <div class="content">
-      <div>
-        <div class="lastSearchTitle">最近搜索</div>
-        <div></div>
-        <div class="h-[60px] mx-[3px] flex justify-between items-center" v-for="item in searchHistory">
-          <div class="w-[150px] font-normal tracking-[0.1px] leading-[15.4px] text-[11px]" style="font-family: Yinmar">
-            {{ item.name }}</div>
-          <div class="flex flex-col items-end" style="font-family: Yinmar">
-            <div class="font-normal tracking-[0.3px] leading-[14px] text-[10px] text-[#96A0B5] mb-[6px]">{{ item.code }}
-            </div>
-            <div
-              class="font-normal tracking-[0.3px] leading-[14px] text-[10px] px-[7px] bg-[#FFCC00] h-[14px] rounded-[3px]">
-              {{ item.kind }}</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <Calendar></Calendar>
-      </div>
+      <SearchHistory></SearchHistory>
+      <CoursePlanning></CoursePlanning>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from 'vue'
+import SearchHistory from './components/SearchHistory.vue'
+import CoursePlanning from './components/CoursePlanning.vue';
 import Header from '@/common/components/Header.vue'
-import Calendar from '@/common/components/Calendar.vue'
 import useDebouncedRef from '@/common/hooks/useDebouncedRef';
 
-import getSearchHistory from '@/common/services/searchHistory'
 import getSearchRecommendation from '@/common/services/searchRecommendation'
 
 import fly from '@/common/assets/fly.png'
@@ -73,12 +57,6 @@ watch(searchText, async () => {
   }
 })
 
-const searchHistory = ref([])
-onMounted(async () => {
-  const res = await getSearchHistory()
-  const temp = res.data
-  searchHistory.value = temp.slice(0, 5)
-})
 
 </script>
 
@@ -266,40 +244,4 @@ input:focus {
   justify-content: space-between
 }
 
-.content>* {
-  height: 100%;
-
-  border-radius: 29px;
-  border: 1px solid #C5C5C5;
-
-  box-shadow: -6px 6px 17px 0px #00000040;
-}
-
-.content> :first-child {
-  box-sizing: border-box;
-  width: 303px;
-  padding: 20px;
-}
-
-.content> :last-child {
-  width: 815px
-}
-
-.lastSearchTitle {
-  /* width: 61px; */
-  height: 21px;
-
-  font-family: Yinmar;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 21px;
-  letter-spacing: 0.30000001192092896px;
-  text-align: left;
-  /* border: solid */
-  margin-bottom: 8px
-}
-
-.lastSearchTitle~div {
-  border-bottom: 1px solid #C5C5C582
-}
 </style>

@@ -63,8 +63,6 @@ function isToday(day) {
     box-shadow: -6px 8px 16.8px 0px #0000001A;
 
     padding-top: 14.22px;
-    margin-left: 100px;
-    margin-top: 100px
 }
 
 #title {
