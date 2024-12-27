@@ -1,8 +1,8 @@
 <template>
-  <div id="container">
+  <div class="container">
     <div class="lastSearchTitle">最近搜索</div>
     <div></div>
-    <div class="h-[60px] mx-[3px] flex justify-between items-center" v-for="item in searchHistory" :key="item.code">
+    <div class="h-[57px] mx-[3px] flex justify-between items-center" v-for="item in searchHistory" :key="item.code">
       <div class="w-[150px] font-normal tracking-[0.1px] leading-[15.4px] text-[11px]" style="font-family: Yinmar">
         {{ item.name }}</div>
       <div class="flex flex-col items-end" style="font-family: Yinmar">
@@ -29,7 +29,7 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-#container {
+.container {
   box-sizing: border-box;
   width: 303px;
   padding: 20px;
@@ -43,7 +43,6 @@ onMounted(async () => {
 }
 
 .lastSearchTitle {
-  /* width: 61px; */
   height: 21px;
 
   font-family: Yinmar;
@@ -52,11 +51,11 @@ onMounted(async () => {
   line-height: 21px;
   letter-spacing: 0.30000001192092896px;
   text-align: left;
-  /* border: solid */
-  margin-bottom: 8px
+  margin-bottom: 10px
 }
 
 .lastSearchTitle~div {
-  border-bottom: 1px solid #C5C5C582
+  border-bottom: 1px solid #C5C5C582;
+  box-sizing: border-box;
 }
 </style>

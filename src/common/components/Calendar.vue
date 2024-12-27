@@ -1,8 +1,8 @@
 <template>
     <div class="calendar">
-        <div id="header">
+        <div class="header">
             <div @click="currShowing = currShowing.subtract(1, 'month')">{{ '<' }}</div>
-            <div id="title">{{ currShowing.year() }}.{{ ('0' + (currShowing.month() + 1)).slice(-2) }}</div>
+            <div class="title">{{ currShowing.year() }}.{{ ('0' + (currShowing.month() + 1)).slice(-2) }}</div>
             <div @click="currShowing = currShowing.add(1, 'month')">{{ '>' }}</div>
         </div>
 
@@ -16,7 +16,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed, onUnmounted } from 'vue'
 import dayjs from 'dayjs'
 
@@ -65,7 +65,7 @@ function isToday(day) {
     padding-top: 14.22px;
 }
 
-#title {
+.title {
     width: 72px;
     height: 27px;
     margin: 0 auto;
@@ -80,12 +80,12 @@ function isToday(day) {
     color: #303030
 }
 
-#header {
+.header {
     display: flex;
     justify-content: space-between;
 }
 
-#header> :nth-child(2n + 1) {
+.header> :nth-child(2n + 1) {
     margin: 0 30px;
     cursor: pointer;
 
@@ -101,7 +101,7 @@ function isToday(day) {
     color: #303030
 }
 
-#header+* {
+.header+* {
     width: 226.66px;
     height: 0px;
     margin: 3px auto 9px;

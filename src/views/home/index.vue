@@ -44,19 +44,16 @@ import getSearchRecommendation from '@/common/services/searchRecommendation'
 import fly from '@/common/assets/fly.png'
 
 const searchText = useDebouncedRef('', 1000)
-
 const focus = ref(false)
-
 const isRecommendating = computed(() => searchText.value && focus.value)
-
 const recommendation = ref([])
+
 watch(searchText, async () => {
   if (isRecommendating.value) {
     const res = await getSearchRecommendation()
     recommendation.value = res.data
   }
 })
-
 
 </script>
 

@@ -1,14 +1,14 @@
 <template>
-  <div id="container">
+  <div class="container">
       <div>
           <img :src="logo" style="width: 184px; height: 76px"><br />
 
-          <p id="title">{{ isLogin ? '嗨，欢迎回来！' : '创建账户 记录学习历程' }}</p>
+          <p class="title">{{ isLogin ? '嗨，欢迎回来！' : '创建账户 记录学习历程' }}</p>
           <p>{{ isLogin ? '登陆到您的账户' : '注册并开始使用' }}</p>
 
           <router-view></router-view>
       </div>
-      <img id="bg" :src="signBg">
+      <img class="bg" :src="signBg">
   </div>
 </template>
 
@@ -31,7 +31,7 @@ console.log('change route')
 </script>
 
 <style scoped>
-#container {
+.container {
   width: 1440px;
   height: 840px;
   margin: 50px auto;
@@ -39,7 +39,7 @@ console.log('change route')
   background: #FFFFFF;
 }
 
-#bg {
+.bg {
   height: 100%;
   width: 670px;
   position: absolute;
@@ -47,7 +47,7 @@ console.log('change route')
   top: 0
 }
 
-#container> :first-child {
+.container> :first-child {
   width: 540px;
   position: absolute;
   top: 50%;
@@ -55,7 +55,7 @@ console.log('change route')
   transform: translateY(-50%) translateX(-50%);
 }
 
-#title {
+.title {
   margin: 45px 0 12px;
   font-family: Inter;
   font-size: 24px;
@@ -65,7 +65,7 @@ console.log('change route')
   color: #292C38;
 }
 
-#title+p {
+.title+p {
   font-family: Inter;
   font-size: 14px;
   font-weight: 500;

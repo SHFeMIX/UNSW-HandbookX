@@ -7,7 +7,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import user from '../assets/user.png'
 import P from '../assets/P.png'
 </script>
