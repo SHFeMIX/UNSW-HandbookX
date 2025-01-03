@@ -155,7 +155,8 @@ input:focus {
   position: absolute;
   top: 57px;
 
-  background-color: white
+  background-color: white;
+  z-index: 999;
 }
 
 .spliter {

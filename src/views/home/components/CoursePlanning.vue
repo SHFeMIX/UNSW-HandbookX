@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import Calendar from '@/common/components/Calendar.vue'
-import StudyProcess from '@/common/components/StudyProcess.vue';
+import StudyProcess from '@/common/components/StudyProgress.vue';
 import { ref, onMounted } from 'vue'
 
 const planning = ref([])

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="first"></div>
+        <div></div>
+        <div class="second"></div>
+        <div></div>
+        <div class="third"></div>
+    </div>
+</body>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+        width: 500px;
+        height: 50px;
+    }
+
+    .container>:nth-child(2n - 1) {
+        width: calc((100% - 2px) / 3);
+        height: 50px;
+        background-color: blue;
+        border-radius: 25px;
+    }
+
+    .container> :not(:nth-child(2n - 1)) {
+        width: 1px;
+        height: 100%;
+        background-color: grey;
+    }
+
+    .first:hover+* {
+        display: none
+    }
+
+    .second:hover+* {
+        display: none
+    }
+</style>
+
+</html>
