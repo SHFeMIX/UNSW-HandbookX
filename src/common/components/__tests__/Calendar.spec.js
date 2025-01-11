@@ -57,7 +57,7 @@ describe('rendering time now - n month', () => {
 describe('rendering time now + n month', () => {
   const wrapper = mount(Calendar)
   const rightButton = wrapper.get('.header> :last-child')
-  it('rendered left button properly', () => {
+  it('rendered right button properly', () => {
     expect(rightButton.text()).toBe('>')
   })
 
