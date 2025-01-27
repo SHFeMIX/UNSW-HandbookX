@@ -8,7 +8,7 @@
           borderRadius: `11px 0 0 ${isRecommendating ? '0' : '11px'}`,
           borderBottom: !isRecommendating ? '3px solid #FFCC00' : 'initial'
         }" />
-      <div @click="">
+      <div @click="() => {}">
         <div class="button">规划探索</div>
         <img :src="fly" />
       </div>
