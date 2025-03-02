@@ -44,6 +44,11 @@ const router = createRouter({
       component: () => import('@/views/Tab.vue')
     },
     {
+      path: '/searchList',
+      name: 'searchList',
+      component: () => import('@/views/searchList/index.vue')
+    },
+    {
       path: '',
       redirect: { name: 'login' }
     },

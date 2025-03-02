@@ -8,7 +8,7 @@
           borderRadius: `11px 0 0 ${isRecommendating ? '0' : '11px'}`,
           borderBottom: !isRecommendating ? '3px solid #FFCC00' : 'initial'
         }" />
-      <div @click="() => {}">
+      <div @click="() => {$router.push({ name: 'searchList', query: { searchText}})}">
         <div class="button">规划探索</div>
         <img :src="fly" />
       </div>
@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, onMounted } from 'vue'
+import { ref, computed, watch } from 'vue'
 import SearchHistory from './components/SearchHistory.vue'
 import CoursePlanning from './components/CoursePlanning.vue';
 import Header from '@/common/components/Header.vue'
