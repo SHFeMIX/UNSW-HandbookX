@@ -132,14 +132,6 @@ input:focus {
   width: 692px;
   height: 38px;
   margin: 16px auto;
-  /* border: solid; */
-
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 22.4px;
-  letter-spacing: 0.30000001192092896px;
-  text-align: left;
 
   display: flex;
   align-items: center;
@@ -150,49 +142,5 @@ input:focus {
 
 .recoItem:hover {
   border-bottom: solid;
-}
-
-.recoItem> :first-child {
-  width: 100px;
-  height: 22px;
-  /* margin-top: 10px; */
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 22.4px;
-  letter-spacing: 0.30000001192092896px;
-  text-align: left;
-
-}
-
-.recoItem> :nth-child(2) {
-  width: 450px;
-  height: 22px;
-  /* margin-top: 10px; */
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 22.4px;
-  letter-spacing: 0.30000001192092896px;
-  text-align: left;
-
-}
-
-.recoItem> :last-child {
-  width: 125px;
-  height: 30px;
-  padding-top: 8px;
-
-  border-radius: 20px;
-  background: #FFCC0099;
-
-
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 22.4px;
-  letter-spacing: 0.30000001192092896px;
-  text-align: center;
-
 }
 </style>

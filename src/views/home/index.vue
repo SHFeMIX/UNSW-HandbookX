@@ -8,9 +8,9 @@
       @onClickSearch="() => $router.push({ name: 'searchList', query: { searchText } })"
       @onClickRecommendationItem="item => $router.push({ name: 'detail', params: { code: item.code } })">
       <template v-slot="item">
-        <div>{{ item.code }}</div>
-        <div>{{ item.name }}</div>
-        <div>{{ item.kind }}</div>
+        <div class="recoItem">{{ item.code }}</div>
+        <div class="recoItem">{{ item.name }}</div>
+        <div class="recoItem">{{ item.kind }}</div>
       </template>
     </SearchBox>
 
@@ -76,5 +76,33 @@ watch(searchText, async () => {
   margin: 90px auto;
   display: flex;
   justify-content: space-between
+}
+
+.recoItem {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22.4px;
+  letter-spacing: 0.30000001192092896px;
+  text-align: left;
+
+  &:first-child {
+    width: 100px;
+    height: 22px;
+  }
+
+  &:nth-child(2) {
+    width: 450px;
+    height: 22px;
+  }
+
+  &:last-child {
+    width: 125px;
+    height: 30px;
+    padding-top: 8px;
+
+    border-radius: 20px;
+    background: #FFCC0099;
+  }
 }
 </style>
