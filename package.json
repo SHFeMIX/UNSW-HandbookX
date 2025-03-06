@@ -18,6 +18,8 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@vueuse/components": "^12.8.2",
+    "@vueuse/core": "^12.8.2",
     "axios": "^1.7.9",
     "dayjs": "^1.11.13",
     "pinia": "^2.2.6",

@@ -99,10 +99,13 @@ watch(searchText, async () => {
   &:last-child {
     width: 125px;
     height: 30px;
-    padding-top: 8px;
 
     border-radius: 20px;
     background: #FFCC0099;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>

@@ -1,10 +1,9 @@
 <template>
-  <div class="search">
-    <input :placeholder="props.placeholder" v-model="searchText" @focus="focus = true"
-      @blur="focus = false" :style="{
-        borderRadius: `11px 0 0 ${isRecommendating ? '0' : '11px'}`,
-        borderBottom: !isRecommendating ? '3px solid #FFCC00' : 'initial'
-      }" />
+  <div class="search" @click="clickedOustide = false" v-on-click-outside="() => clickedOustide = true">
+    <input :placeholder="props.placeholder" v-model="searchText" :style="{
+      borderRadius: `11px 0 0 ${isRecommendating ? '0' : '11px'}`,
+      borderBottom: !isRecommendating ? '3px solid #FFCC00' : 'initial'
+    }" />
     <div @click="() => $emit('onClickSearch')">
       <div class="button">规划探索</div>
       <img :src="fly" />
@@ -12,9 +11,8 @@
 
     <div class="recommendation" v-show="isRecommendating">
       <div class="spliter"></div>
-      <div class="recoItem" v-for="(item, index) in props.recommendations" :key="index"
-        @mousedown="$event.button === 0 && $emit('onClickRecommendationItem', item)">
-        <!-- 用mousedown是为了比输入框的blur先执行 -->
+      <div class="recoItemContainer" v-for="(item, index) in props.recommendations" :key="index"
+        @click="$emit('onClickRecommendationItem', item)">
         <slot v-bind="item" />
       </div>
     </div>
@@ -24,6 +22,7 @@
 <script setup lang="ts" generic="T">
 import { ref, computed } from 'vue'
 import fly from '@/common/assets/fly.png'
+import { vOnClickOutside } from '@vueuse/components'
 
 const props = defineProps<{
   placeholder?: string,
@@ -37,8 +36,12 @@ defineEmits<{
 
 const searchText = defineModel<string>()
 
-const focus = ref(false)
-const isRecommendating = computed(() => searchText.value && focus.value)
+const clickedOustide = ref(false)
+
+const isRecommendating = computed(() =>
+  searchText.value && props.recommendations?.length && !clickedOustide.value
+)
+
 </script>
 
 <style scoped>
@@ -127,7 +130,7 @@ input:focus {
   margin: 0 auto 20px;
 }
 
-.recoItem {
+.recoItemContainer {
   box-sizing: border-box;
   width: 692px;
   height: 38px;
@@ -138,9 +141,9 @@ input:focus {
 
   user-select: none;
   cursor: pointer;
-}
 
-.recoItem:hover {
-  border-bottom: solid;
+  &:hover {
+    border-bottom: solid;
+  }
 }
 </style>
