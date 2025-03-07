@@ -84,10 +84,10 @@ watch(searchText, async () => {
   font-weight: 500;
   line-height: 22.4px;
   letter-spacing: 0.30000001192092896px;
-  text-align: left;
+  /* text-align: left; */
 
   &:first-child {
-    width: 100px;
+    width: 150px;
     height: 22px;
   }
 
@@ -103,6 +103,7 @@ watch(searchText, async () => {
     border-radius: 20px;
     background: #FFCC0099;
 
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
