@@ -48,7 +48,6 @@ const isRecommendating = computed(() =>
 .search {
   width: 900px;
   height: 60px;
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   position: relative;

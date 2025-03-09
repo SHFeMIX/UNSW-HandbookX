@@ -6,7 +6,8 @@
     <SearchBox v-model="searchText" :recommendations="recommendations"
       placeholder="输入Course、Program、Specialisation关键字，开启规划之旅"
       @onClickSearch="() => $router.push({ name: 'searchList', query: { searchText } })"
-      @onClickRecommendationItem="item => $router.push({ name: 'detail', params: { code: item.code } })">
+      @onClickRecommendationItem="item => $router.push({ name: 'detail', params: { code: item.code } })"
+      style="margin: 0 auto">
       <template v-slot="item">
         <div class="recoItem">{{ item.code }}</div>
         <div class="recoItem">{{ item.name }}</div>
