@@ -2,8 +2,7 @@
   <div class="searchList">
     <Header />
     <SearchBox v-model="searchText" style="margin: 44px 0 23px 54px"
-      @onClickSearch="() => $router.push({ name: 'searchList', query: { searchText } })"
-    />
+      @onClickSearch="() => $router.push({ name: 'searchList', query: { searchText } })" />
     <div class="tab">
       <div :style="{
         borderBottom: currentTab === 'All' ? '4px #FFCC00 solid' : null,
