@@ -29,6 +29,10 @@
         Specialisation
       </div>
     </div>
+
+    <div class="listCount">共找到641条结果</div>
+
+    <div class="listContainer"></div>
   </div>
 </template>
 
@@ -70,5 +74,24 @@ const currentTab = ref('All')
     border-bottom: 4px #FFCC00 solid;
     cursor: pointer;
   }
+}
+
+.listCount {
+  margin: 10px 73px;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 10.08px;
+  line-height: 140%;
+  letter-spacing: 0.19px;
+  vertical-align: middle;
+  color: #777676
+}
+
+.listContainer {
+  width: 818px;
+  height: 600px;
+  margin-left: 69px;
+
+  border: solid
 }
 </style>
