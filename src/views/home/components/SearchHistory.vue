@@ -3,9 +3,9 @@
     <div class="lastSearchTitle">最近搜索</div>
     <div></div>
     <div class="h-[57px] mx-[3px] flex justify-between items-center" v-for="item in searchHistory" :key="item.code">
-      <div class="w-[150px] font-normal tracking-[0.1px] leading-[15.4px] text-[11px]" style="font-family: Yinmar">
+      <div class="w-[150px] font-normal tracking-[0.1px] leading-[15.4px] text-[11px] font-[Yinmar]">
         {{ item.name }}</div>
-      <div class="flex flex-col items-end" style="font-family: Yinmar">
+      <div class="flex flex-col items-end font-[Yinmar]">
         <div class="font-normal tracking-[0.3px] leading-[14px] text-[10px] text-[#96A0B5] mb-[6px]">{{ item.code }}
         </div>
         <div

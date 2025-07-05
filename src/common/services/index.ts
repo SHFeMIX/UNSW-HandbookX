@@ -22,7 +22,6 @@ const axiosInstance = axios.create()
 axiosInstance.defaults.baseURL = baseUrl
 
 export default function <R>(service: ServiceType, config?: AxiosRequestConfig) {
-  console.log('service:', service)
-  console.log('config:', config)
+  console.log('service:', service, 'config:', config)
   return axiosInstance.request<R>({ ...service, ...config })
 }
