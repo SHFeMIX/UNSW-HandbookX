@@ -1,24 +1,28 @@
-import axios from 'axios'
+import axios, { type AxiosRequestConfig } from 'axios'
 
 export const baseUrl = '/api/'
 
-export const ServiceMap = {
-    getSearchRecommendation: {
-        url: 'searchRecommendation',
-        method: 'GET'
-    },
-    getSearchHistory: {
-        url: 'searchHistory',
-        method: 'GET'
-    }
+interface ServiceType {
+  url: string
+  method: string
 }
 
-// create and congif a new axios instance
+export const ServiceMap: { [key:string]: ServiceType } = {
+  getSearchRecommendation: {
+    url: 'searchRecommendation',
+    method: 'GET'
+  },
+  getSearchHistory: {
+    url: 'searchHistory',
+    method: 'GET'
+  }
+}
+
 const axiosInstance = axios.create()
 axiosInstance.defaults.baseURL = baseUrl
 
-export default function (service, config) {
-    console.log('service:', service)
-    console.log('config:', config)
-    return axiosInstance.request({...service, ...config})
+export default function <R>(service: ServiceType, config?: AxiosRequestConfig) {
+  console.log('service:', service)
+  console.log('config:', config)
+  return axiosInstance.request<R>({ ...service, ...config })
 }

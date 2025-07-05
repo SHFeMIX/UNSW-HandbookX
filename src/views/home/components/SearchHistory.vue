@@ -19,8 +19,9 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import getSearchHistory from '@/common/services/searchHistory'
+import type { SearchHistoryResType } from '@/common/services/searchHistory/types'
 
-const searchHistory = ref([])
+const searchHistory = ref<SearchHistoryResType>([])
 onMounted(async () => {
   const res = await getSearchHistory()
   const temp = res.data

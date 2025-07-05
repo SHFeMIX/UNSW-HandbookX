@@ -43,7 +43,6 @@ import SearchBox from '@/common/components/SearchBox.vue';
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-
 const searchText = ref(route.query.searchText)
 
 const currentTab = ref('All')
