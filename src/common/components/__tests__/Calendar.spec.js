@@ -9,7 +9,7 @@ const testTitle = (wrapper, currentDate) => {
   const currentYear = currentDate.year()
   const currentMonth = currentDate.month() + 1
 
-  expect(wrapper.get('.title').text()).toBe(`${currentYear}.${('1' + currentMonth).slice(-2)}`)
+  expect(wrapper.get('.title').text()).toBe(`${currentYear}.${('0' + currentMonth).slice(-2)}`)
 }
 
 const testDays = (wrapper, currentDate) => {
