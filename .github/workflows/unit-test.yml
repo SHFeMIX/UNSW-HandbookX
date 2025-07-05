@@ -29,5 +29,5 @@ jobs:
             -   name: Install dependencies
                 run: pnpm install
 
-            -   name: Run tests and check result
+            -   name: Run unit tests and check result
                 run: node scripts/run-ut.js
