@@ -1,12 +1,13 @@
 import { MockMethod } from 'vite-plugin-mock'
 import { baseUrl, ServiceMap } from '../index'
+import type { SearchHistoryResType } from './types'
 
 const api = ServiceMap.getSearchRecommendation
 
 export default {
   url: baseUrl + api.url,
   method: api.method,
-  response: ({ query }) => {
+  response: ({ query }): SearchHistoryResType => {
     return [
       {
         code: 'COMP9032',

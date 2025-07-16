@@ -13,7 +13,8 @@ export default defineConfig({
     vue(),
     vueJsx(),
     vueDevTools(),
-    viteMockServe({
+    !process.env.VITEST && process.env.NODE_ENV !== 'production'
+    && viteMockServe({
       mockPath: 'src/common/services/mock',
       enable: true
     }),
