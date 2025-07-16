@@ -18,7 +18,7 @@ export default defineConfig({
       mockPath: 'src/common/services/mock',
       enable: true
     }),
-    VueMcp()
+    !process.env.VITEST && process.env.NODE_ENV !== 'production' && VueMcp()
   ],
   resolve: {
     alias: {
