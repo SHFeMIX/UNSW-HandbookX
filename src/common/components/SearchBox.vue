@@ -54,11 +54,8 @@ const isRecommendating = computed(() =>
 }
 
 .search input {
-  /* box-sizing: border-box; */
   width: 725px;
-  height: calc(100% - 8px);
   border: 3px solid #FFCC00;
-  /* border-radius: 11px 0 0 11px; */
   border-right: initial;
   padding-left: 18px;
 
@@ -82,14 +79,13 @@ input:focus {
   cursor: pointer;
 
   display: flex;
-  justify-content: left
+  justify-content: left;
+  align-items: center;
 }
 
 .search .button {
-  width: 89px;
-  height: 28px;
-  padding-top: 18px;
   padding-left: 17px;
+  padding-right: 10px;
 
   font-family: Inter;
   font-size: 20px;
@@ -104,7 +100,6 @@ input:focus {
 .button+img {
   width: 24px;
   height: 24px;
-  align-self: center
 }
 
 .recommendation {

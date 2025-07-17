@@ -55,7 +55,6 @@ function isToday(day) {
 <style scoped>
 .calendar {
     width: 278px;
-    height: 240.88px;
     background: #FBFBFB;
     border-radius: 18.16px;
     border: 0.79px solid #D9D9D96E;
@@ -63,6 +62,7 @@ function isToday(day) {
     box-shadow: -6px 8px 16.8px 0px #0000001A;
 
     padding-top: 14.22px;
+    padding-bottom: 14.22px;
 }
 
 .title {
