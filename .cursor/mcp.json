@@ -1,11 +1,5 @@
 {
   "mcpServers": {
-    "weather": {
-      "command": "node",
-      "args": [
-        "~/Desktop/mcp-server-demo/build/index.js"
-      ]
-    },
     "vue-mcp": {
       "url": "http://localhost:5173/__mcp/sse"
     }
