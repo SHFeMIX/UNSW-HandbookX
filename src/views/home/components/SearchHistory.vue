@@ -1,7 +1,7 @@
 <template>
   <div box-border w-303px p-20px h-full rounded-29px border="solid 1px #C5C5C5"
     shadow="[-6px_6px_17px_0px_rgba(0,0,0,0.25)]">
-    <div class="lastSearchTitle" h-21px mb-10px font="[Yinmar] size-15px 400" leading-21px tracking-0.3px text-left>
+    <div h-21px mb-10px font="[Yinmar] size-15px 400" leading-21px tracking-0.3px text-left>
       最近搜索
     </div>
     <div box-border border-b="solid 1px #C5C5C5"></div>
