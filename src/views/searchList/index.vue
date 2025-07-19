@@ -18,9 +18,11 @@
       </div>
     </div>
 
-    <div mx-73px my-10px font-Inter font-500 text-10.08px lh="[140%]" tracking-0.19px v-middle text="[#777676]">共找到641条结果</div>
+    <div mx-73px my-10px font="[Inter]" font-500 text-10.08px lh="[140%]" tracking-0.19px v-middle text="[#777676]">
+      共找到641条结果
+    </div>
 
-    <div class="listContainer"></div>
+    <div w-818px h-600px ml-69px border-solid></div>
   </div>
 </template>
 
@@ -59,13 +61,5 @@ const currentTab = ref('All')
     border-bottom: 4px #FFCC00 solid;
     font-weight: 700;
   }
-}
-
-.listContainer {
-  width: 818px;
-  height: 600px;
-  margin-left: 69px;
-
-  border: solid
 }
 </style>
