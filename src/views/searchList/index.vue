@@ -1,5 +1,5 @@
 <template>
-  <div class="searchList">
+  <div w-1440px h-840px mx-auto my-50px>
     <Header />
     <SearchBox v-model="searchText" style="margin: 44px 0 23px 54px"
       @onClickSearch="() => $router.push({ name: 'searchList', query: { searchText } })" />
@@ -37,13 +37,6 @@ const currentTab = ref('All')
 </script>
 
 <style scoped>
-.searchList {
-  width: 1440px;
-  height: 840px;
-
-  margin: 50px auto;
-}
-
 .tab {
   width: 418px;
   margin-left: 62px;
