@@ -4,28 +4,16 @@
     <SearchBox v-model="searchText" style="margin: 44px 0 23px 54px"
       @onClickSearch="() => $router.push({ name: 'searchList', query: { searchText } })" />
     <div class="tab">
-      <div :style="{
-        borderBottom: currentTab === 'All' ? '4px #FFCC00 solid' : null,
-        fontWeight: currentTab === 'All' ? 700 : null,
-      }" @click="() => currentTab = 'All'">
+      <div :class="{ active_tab: currentTab === 'All' }" @click="() => currentTab = 'All'">
         All
       </div>
-      <div :style="{
-        borderBottom: currentTab === 'Course' ? '4px #FFCC00 solid' : null,
-        fontWeight: currentTab === 'Course' ? 700 : null,
-      }" @click="() => currentTab = 'Course'">
+      <div :class="{ active_tab: currentTab === 'Course' }" @click="() => currentTab = 'Course'">
         Course
       </div>
-      <div :style="{
-        borderBottom: currentTab === 'Program' ? '4px #FFCC00 solid' : null,
-        fontWeight: currentTab === 'Program' ? 700 : null,
-      }" @click="() => currentTab = 'Program'">
+      <div :class="{ active_tab: currentTab === 'Program' }" @click="() => currentTab = 'Program'">
         Program
       </div>
-      <div :style="{
-        borderBottom: currentTab === 'Specialisation' ? '4px #FFCC00 solid' : null,
-        fontWeight: currentTab === 'Specialisation' ? 700 : null,
-      }" @click="() => currentTab = 'Specialisation'">
+      <div :class="{ active_tab: currentTab === 'Specialisation' }" @click="() => currentTab = 'Specialisation'">
         Specialisation
       </div>
     </div>
@@ -43,7 +31,7 @@ import SearchBox from '@/common/components/SearchBox.vue';
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const searchText = ref(route.query.searchText)
+const searchText = ref(route.query.searchText as string)
 
 const currentTab = ref('All')
 </script>
@@ -73,7 +61,13 @@ const currentTab = ref('All')
     border-bottom: 4px #FFCC00 solid;
     cursor: pointer;
   }
+
+  >.active_tab {
+    border-bottom: 4px #FFCC00 solid;
+    font-weight: 700;
+  }
 }
+
 
 .listCount {
   margin: 10px 73px;
