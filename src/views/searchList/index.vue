@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <div class="listCount">共找到641条结果</div>
+    <div mx-73px my-10px font-Inter font-500 text-10.08px lh="[140%]" tracking-0.19px v-middle text="[#777676]">共找到641条结果</div>
 
     <div class="listContainer"></div>
   </div>
@@ -59,18 +59,6 @@ const currentTab = ref('All')
     border-bottom: 4px #FFCC00 solid;
     font-weight: 700;
   }
-}
-
-
-.listCount {
-  margin: 10px 73px;
-  font-family: Inter;
-  font-weight: 500;
-  font-size: 10.08px;
-  line-height: 140%;
-  letter-spacing: 0.19px;
-  vertical-align: middle;
-  color: #777676
 }
 
 .listContainer {
